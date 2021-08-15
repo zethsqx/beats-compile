@@ -52,3 +52,24 @@ cp -R /root/go_projects/src/github.com/elastic/beats/heartbeat ~/beats/
 cp /root/go/bin/heartbeat ~/beats/heartbeat/
 chmod go-w ~/beats/heartbeat/heartbeat.yml
 ```
+
+9. (Optional) Create systemd unit
+```
+vi /etc/systemd/system/heartbeat.service
+[Unit]
+Description=Elasticsearch Heartbeat Agent
+After=network.online.target
+Wants=network.online.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/root/beats/heartbeat/heartbeat -c /root/beats/heartbeat/heartbeat.yml
+
+[Install]
+WantedBy=multi-user.target
+
+systemctl enable heartbeat.service
+systemctl restart heartbeat.service
+systemctl status heartbeat.service
+```
