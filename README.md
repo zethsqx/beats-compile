@@ -13,7 +13,7 @@ rm -rf go_projects
 (eg. tested arm6 on armhf)
 ```
 wget https://dl.google.com/go/go1.16.6.linux-arm64.tar.gz
-tar -C /usr/local go1.16.6.linux-arm64.tar.gz
+tar -C /usr/local go1.17.5.linux-armv6l.tar.gz
 ```
 
 3. Configure GO
