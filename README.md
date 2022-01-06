@@ -13,8 +13,8 @@ rm -rf /usr/local/go
 2. Download latest go of supported architecture
 (eg. tested arm6 on armhf)
 ```
-wget https://dl.google.com/go/go1.17.5.linux-armv6l.tar.gz
-tar -C /usr/local go1.17.5.linux-armv6l.tar.gz
+wget https://dl.google.com/go/go1.16.6.linux-armv6l.tar.gz
+tar -zxvf go1.16.6.linux-armv6l.tar.gz -C /usr/local 
 ```
 
 3. Configure GO
